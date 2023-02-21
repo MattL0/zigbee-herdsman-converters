@@ -797,8 +797,9 @@ module.exports = [
             await reporting.thermostatTemperature(endpoint);
             await reporting.thermostatPIHeatingDemand(endpoint);
             await reporting.thermostatOccupiedHeatingSetpoint(endpoint);
-
+            await reporting.readMeteringMultiplierDivisor(endpoint);
             try {
+                await reporting.readMeteringMultiplierDivisor(endpoint);
                 await reporting.currentSummDelivered(endpoint, {min: 10, max: 303, change: [1, 1]});
             } catch (error) {/* Do nothing*/}
             try {
